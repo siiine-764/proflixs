@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style/style.css" />
+    <link rel="stylesheet" href="./src/js/slider.js" />
+    <link rel="stylesheet" href="./src/style/slider2.css" />
+    <link rel="stylesheet" href="./src/style/sidebar.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+      integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navbar" style="z-index: 1; min-width: 100%">
+      <div class="logo_container" style="min-width: 20%">
+        <a href="#">
+          <img
+            src="./img/Netflix_logo.svg"
+            alt="logo netflix"
+            class="navbar-brand logo"
+            style="padding-bottom: 30px"
+          />
+        </a>
+        <button class="btn_nav_toggle">
+          <i
+            class="fas fa-ellipsis-h"
+            style="
+              font-size: 40px;
+              margin-top: 0px;
+              margin-bottom: 30px;
+              position: absolute;
+              transform: translate(-20px, -10px);
+            "
+          ></i>
+        </button>
+      </div>
+      <div class="nav_for_slide" style="min-width: 80%; padding-bottom: 15px">
+        <div class="nav nav_left">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Recently Added</a></li>
+            <li><a href="#">My List</a></li>
+          </ul>
+        </div>
+        <div class="nav nav_right" style="float: right">
+          <div class="f_left md_f_none div_search">
+            <input type="text" placeholder="Search" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+            <button id="btn_close_div_search">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+          <div class="f_left md_f_none div_for_hide">
+            <ul>
+              <li id="show_div_search"><i class="fa fa-search"></i></li>
+              <li><a href="#">KIDS</a></li>
+              <li><a href="#">DVD</a></li>
+              <li>
+                <!---------------------start methode notification---------------------------->
+                <button
+                  class="btn-notification"
+                  data-nav-button
+                  style="
+                    background-color: transparent;
+                    border: none;
+                    color: #505050;
+                  "
+                >
+                  <i class="fas fa-bell" data-badge="20" data-nav-button></i>
+                </button>
+                <div class="menu">
+                  <div class="content">
+                    <ul>
+                      <li class="--unread">
+                        <div>
+                          <img src="./img/s1.jpg" style="width:20% !important;" />
+                          <span>
+                            <b>Oscar Linnros</b> has now payed their final
+                            milestone.
+                          </span>
+                        </div>
+                      </li>
+                      <li class="--unread">
+                        <div>
+                          <img src="./img/s2.jpg" style="width:20% !important;" />
+                          <span>
+                            <b>Kanye West</b> liked your proposal 2 hours ago.
+                          </span>
+                        </div>
+                      </li>
+                      <li class="--unread">
+                        <div>
+                          <img src="./img/s5.jpg" style="width:20% !important;" />
+                          <span>
+                            <b>Amber Rose</b> commented on the final contract
+                            proposal.
+                          </span>
+                        </div>
+                      </li>
+
+                      <li class="--unread" id="more">
+                        <div>
+                          <img src="./img/s3.jpg" style="width:20% !important;" />
+                          <span>
+                            <b>Amber Rose</b> commented on the final contract
+                            proposal.
+                          </span>
+                        </div>
+                      </li>
+
+                      <li class="--unread" id="more">
+                        <div>
+                          <img src="./img/s2.jpg" style="width:20% !important;" />
+                          <span>
+                            <b>Amber Rose</b> commented on the final contract
+                            proposal.
+                          </span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="footer">
+                    <button class="btn-seemore">See All</button>
+                  </div>
+                </div>
+                <!--end methode notification-->
+              </li>
+            </ul>
+          </div>
+          <div class="account div_for_hide">
+            <div class="f_left account_img">
+              <img src="./img/account.png" />
+            </div>
+            <div class="f_left">
+              <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <video id="video" autoplay muted>
+      <source
+        src="./videos/Money Heist_ Part 5 Vol. 1 _ Official Trailer _ Netflix.mp4"
+        type="video/mp4"
+      />
+      <source
+        src="./videos/Money Heist_ Part 5 Vol. 1 _ Official Trailer _ Netflix.ogg"
+        type="video/ogg"
+      />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="col-sm-12 overflow">
+      <div class="logoflix">
+        <img
+          src="./img/1200px-Netflix_2015_N_logo.svg.png"
+          alt="Netflix logo"
+          width="2%"
+          id="flixlogo"
+        />
+        <h2>Series</h2>
+      </div>
+
+      <div class="info">
+        <h1>la casa de papel</h1>
+        <div style="padding: 15px; padding-left: 0">
+          <button type="submit" id="btnplay">
+            <i class="fas fa-play" style="padding: 5px"></i> Play
+          </button>
+          <button type="submit" id="btnplus">
+            <i class="fas fa-plus" style="padding: 5px"></i> My List
+          </button>
+        </div>
+        <p class="cursor-default">
+          After a mysterious disease kills every resident over 21 years old,
+          survivors of a town must fend for themselves when the government
+          quarantines them.
+        </p>
+      </div>
+    </div>
+
+    <!-- partial:index.partial.html  slider 1 -->
+    <div class="wapper" style="padding-bottom: 250px">
+      <a href="#" class="button"><span>Top Picks For You </span></a>
+      <div class="slider1" id="slider">
+        <div class="slider-container recommended_contents_0">
+          <a href="#" class="recommended_content">
+            <img src="./img/s1.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="./img/s2.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="./img/s3.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="./img/s4.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/s5.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/s1.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/s1.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/s2.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/s3.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/s4.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/s3.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/s4.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/s5.jpg" class="imgslider" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- partial:index.partial.html  slider 2 -->
+    <div class="wapper" style="padding-bottom: 250px; background-color: black">
+      <a href="#" class="button"><span>Top Picks For You </span></a>
+      <div class="slider2" id="slider">
+        <div class="slider-container recommended_contents_1">
+          <a href="#" class="recommended_content">
+            <img src="../img/s1.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s2.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s3.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s4.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s5.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s1.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s1.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s2.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s3.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s4.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s3.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s4.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s5.jpg" class="imgslider" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- partial:index.partial.html  slider 3 -->
+    <div class="wapper" style="padding-bottom: 250px; background-color: black">
+      <a href="#" class="button"><span>Top Picks For You </span></a>
+      <div class="slider3" id="slider">
+        <div class="slider-container recommended_contents_2">
+          <a href="#" class="recommended_content">
+            <img src="../img/s1.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s2.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s3.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s4.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s5.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s1.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s1.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s2.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s3.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s4.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s3.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s4.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="../img/s5.jpg" class="imgslider" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <h1 id="counter" style="display: none">0</h1>
+
+    <!-- partial:index.partial.html  slider 4 -->
+    <div class="wapper" style="background-color: black">
+      <a href="#" class="button"><span>Top Picks For You </span></a>
+      <div class="slider4" id="slider">
+        <div class="slider-container recommended_contents_4">
+          <a href="#" class="recommended_content">
+            <img src="./img/pic1.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic2.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic3.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic4.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic5.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic6.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic7.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic8.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic9.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic10.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img
+              src="./img/Brand_New_Cherry_Flavor.png"
+              class="imgslider"
+              alt=""
+            />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic11.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic13.jpg" class="imgslider" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- partial:index.partial.html  slider 5 -->
+    <div class="wapper" style="background-color: black">
+      <a href="#" class="button"><span>Top Picks For You </span></a>
+      <div class="slider5" id="slider">
+        <div class="slider-container recommended_contents_5">
+          <a href="#" class="recommended_content">
+            <img src="./img/pic1.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic2.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic3.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic4.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic5.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic6.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic7.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic8.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic9.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic10.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img
+              src="./img/Brand_New_Cherry_Flavor.png"
+              class="imgslider"
+              alt=""
+            />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic11.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic13.jpg" class="imgslider" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- partial:index.partial.html  slider 6 -->
+    <div class="wapper" style="background-color: black">
+      <a href="#" class="button"><span>Top Picks For You </span></a>
+      <div class="slider6" id="slider">
+        <div class="slider-container recommended_contents_6">
+          <a href="#" class="recommended_content">
+            <img src="./img/pic1.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic2.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic3.jpg" class="imgslider" alt=""
+          /></a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic4.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic5.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic6.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic7.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic8.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic9.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic10.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img
+              src="./img/Brand_New_Cherry_Flavor.png"
+              class="imgslider"
+              alt=""
+            />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic11.jpg" class="imgslider" alt="" />
+          </a>
+          <a href="#" class="recommended_content">
+            <img src="./img/pic13.jpg" class="imgslider" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--sidebar-->
+    <nav class="main-menu">
+      <ul>
+        <li>
+          <a href="#" class="cool-link">
+            <i class="fa fas fa-search fa-2x"></i>
+            <span class="nav-text"> Dashboard </span>
+          </a>
+        </li>
+        <li class="has-subnav">
+          <a href="#" class="cool-link">
+            <i class="fa fas fa-home fa-2x"></i>
+            <span class="nav-text"> Stars Components </span>
+          </a>
+        </li>
+        <li class="has-subnav">
+          <a href="#" class="cool-link">
+            <i class="fa fas fa-random fa-2x"></i>
+            <span class="nav-text"> Forms </span>
+          </a>
+        </li>
+        <li class="has-subnav">
+          <a href="#" class="cool-link">
+            <i class="fa far fa-calendar-alt fa-2x"></i>
+            <span class="nav-text"> Pages </span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="cool-link">
+            <i class="fa fas fa-desktop fa-2x"></i>
+            <span class="nav-text"> Graphs and Statistics </span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="cool-link">
+            <i class="fa far fa-newspaper fa-2x"></i>
+            <span class="nav-text"> Quotes </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fas fa-plus fa-2x"></i>
+            <span class="nav-text"> Tables </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- partial -->
+    <script src="https://cdn.rawgit.com/chrisbateman/impetus/master/dist/impetus.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./src/js/index.js"></script>
+    <script src="./src/js/DraggableSlider1.js"></script>
+    <script src="./src/js/DraggableSlider2.js"></script>
+    <script src="./src/js/DraggableSlider3.js"></script>
+    <script src="./src/js/DraggableSlider4.js"></script>
+    <script src="./src/js/DraggableSlider5.js"></script>
+    <script src="./src/js/DraggableSlider6.js"></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+.wapper {
+  padding-top: 0px;
+  min-height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(black), color-stop(black), to(black));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), black, black, black);
+  -webkit-transform: translate(0px, 400px);
+          transform: translate(0px, 400px);
+  padding-bottom: 500px;
+  /*btn title solider*/
+}
+
+.wapper a {
+  outline: none;
+  text-decoration: none;
+}
+
+.wapper .button {
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  font-size: 40px;
+  background: transparent;
+  padding: 40px;
+  width: 200px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  position: inherit;
+  margin-left: 30px;
+  color: white;
+  padding-left: 20px;
+  font-size: 40px;
+}
+
+.wapper .button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: white;
+}
+
+.wapper .button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 40px;
+}
+
+.wapper .button:hover span {
+  padding-right: 25px;
+}
+
+.wapper .button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#slider {
+  overflow: hidden;
+  position: absolute;
+  max-width: 100%;
+  min-height: 100%;
+  padding: 10px;
+}
+
+.slider-container {
+  width: 100%;
+  height: 288px;
+  white-space: nowrap;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.slider-container .item {
+  padding: 0px;
+  margin: 2px;
+}
+
+.slider-container .item img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.recommended_content {
+  padding: 0px;
+  margin: 2px;
+}
+
+.imgslider {
+  border-radius: 5px;
+  width: 20%;
+}
+
+@media (max-width: 360px) {
+  .wapper {
+    background-color: violet;
+    padding-bottom: 100vh;
+  }
+}
+
+@media (max-width: 992px) {
+  .imgslider {
+    width: 50%;
+  }
+  .wapper {
+    padding-bottom: 400px;
+  }
+}
+
+@media (min-width: 2500px) {
+  .wapper {
+    padding-bottom: 120vh;
+  }
+  .slider-container .item {
+    margin: 20px;
+  }
+  .imgslider {
+    width: 15%;
+  }
+}
+/*# sourceMappingURL=slider2.css.map */
